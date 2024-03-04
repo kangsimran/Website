@@ -90,3 +90,19 @@ window.addEventListener("scroll", function () {
   }
 
 });
+
+document.querySelector('.call-btn').addEventListener('click', function() {
+  // Create confetti
+  for (let i = 0; i < 100; i++) {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = `${Math.random() * 100}%`;
+    confetti.style.animationDelay = `${Math.random() * 3}s`;
+    document.getElementById('confetti-container').appendChild(confetti);
+  }
+
+  // Remove confetti after animation ends
+  setTimeout(function() {
+    document.getElementById('confetti-container').innerHTML = '';
+  }, 3000);
+});
